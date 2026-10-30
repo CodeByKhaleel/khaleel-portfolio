@@ -20,3 +20,6 @@ build/
 Thumbs.db
 *.log
 *.local
+
+# The React site serves this image from public/images; keep the local transfer copy untracked.
+/assets/images/khaleel-portrait-cutout.png
