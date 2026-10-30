@@ -11,8 +11,11 @@
 
 # Dependencies and generated files
 node_modules/
+.next/
+out/
 dist/
 build/
+.vercel/
 .DS_Store
 Thumbs.db
 *.log

@@ -4,7 +4,7 @@
 
 I work across data extraction, transformation, quality, and automation. I enjoy understanding a problem deeply before choosing an approach, then shaping workflows that are easier to reuse and maintain.
 
-<img src="assets/images/khaleel-portrait.jpeg" width="220" align="right" alt="Portrait of Mohammed Khaleelullah">
+<img src="public/images/khaleel-portrait-cutout.png" width="220" align="right" alt="Portrait of Mohammed Khaleelullah">
 
 **Portfolio repository:** [CodeByKhaleel/khaleel-portfolio](https://github.com/CodeByKhaleel/khaleel-portfolio) · [LinkedIn](https://www.linkedin.com/in/mohammedkhaleelulah/) · [GitHub](https://github.com/CodeByKhaleel)
 
@@ -32,26 +32,40 @@ Contributions include maintaining code quality and documentation, creating sched
 
 The site presents my professional story, experience, education, certifications, and project case studies in a responsive, accessible layout. It also includes a small selection of personal experiments.
 
-Explore the site source: [About](about/) · [Experience](experience/) · [Projects](projects/) · [Contact](contact/)
+Explore the site source: [About](app/about/page.js) · [Experience](app/experience/page.js) · [Projects](app/projects/page.js) · [Contact](app/contact/page.js)
 
 ## Built with
 
-- Semantic HTML
-- CSS with shared design tokens and responsive layouts
-- Vanilla JavaScript for navigation and mobile menu behavior
+- React 19 and Next.js 16 App Router
+- Static export: each route is pre-rendered to HTML, with page-specific metadata
+- Semantic HTML and responsive CSS
+- Small client-side React component for accessible mobile navigation
 - Google Fonts: Manrope, Inter, and IBM Plex Mono
 
 ## Run locally
 
-From this directory, start a static file server:
+Install the locked dependencies and start the development server:
 
 ```powershell
-python -m http.server 4173
+npm ci
+npm run dev
 ```
 
-Then open [http://localhost:4173](http://localhost:4173).
+Open [http://localhost:3000](http://localhost:3000).
 
-The site has no build step or runtime dependencies. It supports both a root domain and the GitHub Pages project path `/khaleel-portfolio/`.
+Create a static export for a root-domain host:
+
+```powershell
+npm run build
+```
+
+For the GitHub Pages project path, build with the repository prefix:
+
+```powershell
+npm run build:pages
+```
+
+Both builds export the site to `out/`. The Pages build uses `/khaleel-portfolio` as its base path. A custom domain build uses the root path. The custom domain and canonical URLs can be added once the domain is confirmed.
 
 ## Privacy
 
