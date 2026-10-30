@@ -1,0 +1,19 @@
+# Private portfolio source material; keep these local if copied into this repo.
+/source/
+/certificates/
+/portfolio-profile-review.md
+/portfolio-design-proposal.md
+/portfolio-master-prompt.md
+/resume*.pdf
+/cv*.pdf
+*.env
+.env*
+
+# Dependencies and generated files
+node_modules/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.log
+*.local

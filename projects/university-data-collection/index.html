@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="University course and intake information collected through TypeScript and Playwright scripts, then checked before CRM import.">
+  <meta name="theme-color" content="#fafaf7"><title>University Data Collection — Khaleel</title>
+  <link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-site-header></header>
+  <main id="main">
+    <section class="page-hero"><div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a data-route="/projects/" href="/projects/">Projects</a><span aria-hidden="true">/</span><span>Professional work</span></nav>
+      <p class="eyebrow">Data extraction · Quality · CRM workflows</p>
+      <h1>University Course and Intake Data Collection</h1>
+      <p class="lead">University information lived across sites with different layouts and behaviors. I built and maintained scripts to collect it, then prepared files for quality checks before CRM import.</p>
+      <div class="meta-strip"><span class="meta-chip"><strong>My role</strong> Script development and updates</span><span class="meta-chip"><strong>Created</strong> 37 university scripts</span><span class="meta-chip"><strong>Contributed to</strong> 72 universities</span></div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="section-heading"><p class="eyebrow">The data path</p><h2 class="section-title">Collect first. Check before import.</h2><p class="lead">Each university had its own page structure, so the extraction logic had to account for site-specific navigation and content.</p></div>
+      <div class="process">
+        <article class="process-step"><span class="step-index">01 · SOURCE</span><h3>University sites</h3><p>Course and intake information is spread across pages.</p></article>
+        <article class="process-step process-step--highlight"><span class="step-index">02 · EXTRACT</span><h3>Site-specific scripts</h3><p>TypeScript and Playwright handle each site’s structure.</p></article>
+        <article class="process-step"><span class="step-index">03 · PREPARE</span><h3>Generated files</h3><p>Extracted information is structured for review.</p></article>
+        <article class="process-step"><span class="step-index">04 · QC + IMPORT</span><h3>CRM update</h3><p>Files are quality-checked, then imported to the CRM.</p></article>
+      </div>
+    </div></section>
+    <section class="section"><div class="container story-grid">
+      <aside class="story-aside"><span class="mono-label">What changed from site to site</span><p>Pagination, dropdowns, clicks, content formats, and bot defenses made a single generic extraction path unreliable.</p></aside>
+      <div class="prose">
+        <h2>One script per university</h2>
+        <p>Each university could expose the needed course information differently. I created 37 university scripts and contributed edits or updates across 72 universities.</p>
+        <p>The scripts gathered course names, intakes, attendance details, duration, and other information used to keep the internal CRM current. The output went through a quality-control step before import.</p>
+        <h2>Handle the page that exists</h2>
+        <p>The work involved browser navigation, page-specific selectors, pagination, dropdowns, dynamic pages, and data normalization. Different site behavior meant each script needed to match its own source.</p>
+        <div class="note note--sand"><strong>A real limitation:</strong> Cloudflare protection was difficult and was not solved in this project. The case study should not imply that it was bypassed.</div>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="split-cards">
+        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Script creation and maintenance</h3><p>I created 37 university scripts and updated or edited scripts across 72 universities. I also integrated the scripts with shared normalization functions for fields such as intake dates, course level, campus, duration, and attendance type.</p></article>
+        <article class="detail-card"><p class="eyebrow">Technical context</p><h3>TypeScript + Playwright</h3><p>The scripts used TypeScript and Playwright. The wider project included shared processing and storage components; integrating shared functions does not mean I authored those components.</p></article>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container callout"><p class="eyebrow">Why the process mattered</p><h2 class="section-title">Useful data needed a quality gate.</h2><p>Preparing generated files for QC kept extraction separate from the final CRM update, so data could be checked before it reached operational records.</p><div class="button-row"><a class="button button--sand" data-route="/projects/partner-priority-dashboard/" href="/projects/partner-priority-dashboard/">Next: Partner dashboard →</a><a class="button button--secondary" data-route="/projects/" href="/projects/">All projects</a></div></div></section>
+  </main><footer class="site-footer" data-site-footer></footer>
+</body></html>

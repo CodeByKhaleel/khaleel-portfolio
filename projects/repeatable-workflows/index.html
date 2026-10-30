@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How a configurable workflow handled repetitive submissions across many different portals.">
+  <meta name="theme-color" content="#fafaf7"><title>Repeatable Workflows — Khaleel</title>
+  <link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-site-header></header>
+  <main id="main">
+    <section class="page-hero"><div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a data-route="/projects/" href="/projects/">Projects</a><span aria-hidden="true">/</span><span>Professional work</span></nav>
+      <p class="eyebrow">Workflow design · Data preparation · Automation</p>
+      <h1>Turning Repetitive Submissions into Repeatable Workflows</h1>
+      <p class="lead">A configurable approach to the same problem repeated across portals: prepare the data once, describe each workflow, and make room for a person when the page needs one.</p>
+      <div class="meta-strip"><span class="meta-chip"><strong>My role</strong> Config model and workflow logic</span><span class="meta-chip"><strong>Scale</strong> 70+ portals</span><span class="meta-chip"><strong>Team</strong> Cross-functional</span></div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card"><strong>3,000+</strong><span>submissions processed</span></div>
+        <div class="metric-card"><strong>70+</strong><span>portal workflows configured</span></div>
+        <div class="metric-card"><strong>94%</strong><span>success rate</span></div>
+        <div class="metric-card"><strong>1,200+</strong><span>hours saved</span></div>
+      </div>
+      <p class="metric-caption">Latest project snapshot; figures change as the platform is used. A manual submission could take about 30 minutes. Success rate is successful jobs divided by successful plus failed jobs; intentional user cancellations are excluded.</p>
+    </div></section>
+    <section class="section"><div class="container story-grid">
+      <aside class="story-aside"><span class="mono-label">The problem</span><h2 class="section-title" style="font-size:1.65rem">Every portal had its own rules.</h2><p>Fields, page flows, uploads, verification, and conditional questions changed from one site to another. A separate bot for every portal would multiply maintenance.</p></aside>
+      <div class="prose">
+        <p>Each submission meant someone re-entering CRM details into another external portal. The same information needed different formats, and the page itself could change depending on earlier answers.</p>
+        <p>The core design question was how to support new portal workflows without adding another portal-specific code path every time.</p>
+        <h2>Describe the portal. Reuse the workflow.</h2>
+        <p>I designed the JSON configuration model and workflow editor so each portal’s steps and conditions could live in configuration. The shared workflow could interpret that description, while config changes could be made without redeploying the code.</p>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="section-heading"><p class="eyebrow">One job, five stages</p><h2 class="section-title">Make variation manageable.</h2></div>
+      <div class="process">
+        <article class="process-step"><span class="step-index">01 · SELECT</span><h3>Choose a record</h3><p>An operator selects the record and portal.</p></article>
+        <article class="process-step"><span class="step-index">02 · PREPARE</span><h3>Shape the data</h3><p>CRM values are normalized and checked before a run.</p></article>
+        <article class="process-step process-step--highlight"><span class="step-index">03 · FOLLOW</span><h3>Read the configuration</h3><p>Rules follow the fields and branches that apply.</p></article>
+        <article class="process-step"><span class="step-index">04 · HAND OFF</span><h3>Pause for a person</h3><p>For steps such as OTPs or CAPTCHAs, the workflow can wait and resume.</p></article>
+      </div>
+    </div></section>
+    <section class="section"><div class="container">
+      <div class="section-heading"><p class="eyebrow">Design choices</p><h2 class="section-title">What I built, and why.</h2></div>
+      <div class="split-cards">
+        <article class="detail-card"><h3>Prepare data before the run</h3><p>A Python preparation step reshapes CRM names, dates, country codes, phone numbers, and yes/no values into portal-ready values. Missing fields are surfaced before the browser starts.</p></article>
+        <article class="detail-card"><h3>Let the page determine the branch</h3><p>Configuration rules check what is actually present on the page, follow relevant answers, and skip questions that do not apply. This lets one workflow cover multiple form paths.</p></article>
+        <article class="detail-card"><h3>Design for human checkpoints</h3><p>My manager proposed human involvement for verification steps. I implemented the handoff so a person can complete an OTP or CAPTCHA and the workflow can continue afterward.</p></article>
+        <article class="detail-card"><h3>Make failures actionable</h3><p>Retries handle small transient failures such as slow pages. Failure labels distinguish configuration, portal changes, connection issues, and runs needing a person.</p></article>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="split-cards">
+        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Configuration and decision layer</h3><ul><li>Designed the JSON configuration model and workflow editor.</li><li>Built data preparation and conditional form logic.</li><li>Implemented human handoffs, retries, and failure classification.</li><li>Contributed updates to browser automation after its initial implementation.</li></ul></article>
+        <article class="detail-card"><p class="eyebrow">Team contribution</p><h3>Clear ownership boundaries</h3><p>A teammate built the Chrome extension and RabbitMQ component and initially implemented browser automation. My manager proposed the human-checkpoint approach and managed the work.</p></article>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container callout"><p class="eyebrow">The outcome</p><h2 class="section-title">A workflow that could grow through configuration.</h2><p>More portal variation could be handled while keeping the shared codebase consistent. The project continues to run internally, so its metric snapshot changes over time.</p><div class="button-row"><a class="button button--sand" data-route="/projects/university-data-collection/" href="/projects/university-data-collection/">Next: University data collection →</a><a class="button button--secondary" data-route="/projects/" href="/projects/">All projects</a></div></div></section>
+  </main><footer class="site-footer" data-site-footer></footer>
+</body></html>

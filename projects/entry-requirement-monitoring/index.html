@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maintaining ticket-driven checks for university entry requirement updates that may be defined at different levels.">
+  <meta name="theme-color" content="#fafaf7"><title>Entry Requirement Monitoring — Khaleel</title>
+  <link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-site-header></header>
+  <main id="main">
+    <section class="page-hero"><div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a data-route="/projects/" href="/projects/">Projects</a><span aria-hidden="true">/</span><span>Professional contribution</span></nav>
+      <p class="eyebrow">Codebase quality · AI workflows · Data updates</p>
+      <h1>University Entry Requirement Monitoring</h1>
+      <p class="lead">Entry requirements can be university-wide, nationality-specific, or course-specific. The workflow checks updates against existing records and routes the next action.</p>
+      <div class="meta-strip"><span class="meta-chip"><strong>My role</strong> Maintenance and workflow support</span><span class="meta-chip"><strong>Primary implementation</strong> Colleague-led</span><span class="meta-chip"><strong>AI use</strong> Ticket interpretation</span></div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="section-heading"><p class="eyebrow">The checkpoint flow</p><h2 class="section-title">Use AI where wording varies. Keep workflow rules explicit.</h2></div>
+      <div class="process">
+        <article class="process-step"><span class="step-index">01 · SCHEDULE</span><h3>Check on a cadence</h3><p>Dates and intervals can be configured.</p></article>
+        <article class="process-step process-step--highlight"><span class="step-index">02 · INTERPRET</span><h3>Read the ticket</h3><p>AI helps interpret varying Jira ticket patterns.</p></article>
+        <article class="process-step"><span class="step-index">03 · COMPARE</span><h3>Check email against records</h3><p>Rule-based steps compare email content with the database/cloud record.</p></article>
+        <article class="process-step"><span class="step-index">04 · ROUTE</span><h3>Update or close</h3><p>Generate an update file if needed; otherwise close the ticket and continue.</p></article>
+      </div>
+      <p class="note">AI interprets Jira tickets; it does not extract email contents. The comparison and ticket progression are handled by workflow rules.</p>
+    </div></section>
+    <section class="section"><div class="container story-grid">
+      <aside class="story-aside"><span class="mono-label">Why it needs a workflow</span><p>Requirements do not live at one consistent level, and updates arrive in different forms.</p></aside>
+      <div class="prose">
+        <p>Some entry requirements apply across a university. Others vary by nationality or by course. A monitoring workflow needs to find the relevant update and compare it with the current database record before an update is prepared.</p>
+        <p>Jira tickets are the checkpoint for updates. A scheduled bot checks tickets, follows the ticket to the related university email, and compares the email content with existing data. If an update is needed, the process creates an import file; if not, it marks the ticket done and moves on.</p>
+        <h2>My contribution was keeping the workflow dependable</h2>
+        <p>A colleague led the primary implementation. I maintained the codebase and scripts, checked quality, worked to reduce unnecessary storage, improved README documentation, updated data from generated files, and created the Hermes-based checkpoint bots and schedules.</p>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container">
+      <div class="split-cards">
+        <article class="detail-card"><p class="eyebrow">My work</p><h3>Maintenance and quality</h3><ul><li>Maintained scripts and codebase quality.</li><li>Improved project READMEs and documentation.</li><li>Built configurable scheduled checkpoint bots in Hermes.</li><li>Updated records from generated files.</li></ul></article>
+        <article class="detail-card"><p class="eyebrow">Team boundary</p><h3>Colleague-led implementation</h3><p>My colleague was the main implementation owner. This page describes my supporting engineering and workflow contribution, not project leadership.</p></article>
+      </div>
+    </div></section>
+    <section class="section section--compact"><div class="container callout"><p class="eyebrow">A practical use of AI</p><h2 class="section-title">Adapt the tool to the messy part of the process.</h2><p>Ticket wording varies. AI helps interpret that checkpoint; explicit workflow rules handle schedules, comparisons, and ticket movement.</p><div class="button-row"><a class="button button--sand" data-route="/projects/" href="/projects/">Back to all projects</a><a class="button button--secondary" data-route="/contact/" href="/contact/">Contact</a></div></div></section>
+  </main><footer class="site-footer" data-site-footer></footer>
+</body></html>
