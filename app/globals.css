@@ -543,11 +543,11 @@ a.project-card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba
   object-fit: contain;
   filter: drop-shadow(0 10px 14px rgba(20, 46, 38, .12));
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .portrait-stage:hover .portrait-image,
   .portrait-stage:focus-within .portrait-image {
-    filter: drop-shadow(0 24px 29px rgba(15, 77, 63, .2));
-    transform: translateY(-7px) scale(1.025);
+    filter: drop-shadow(0 25px 31px rgba(15, 77, 63, .21));
+    transform: translateY(-9px) scale(1.03);
   }
 }
 @media (max-width: 900px) {
