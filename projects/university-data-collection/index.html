@@ -13,33 +13,47 @@
       <nav class="breadcrumb" aria-label="Breadcrumb"><a data-route="/projects/" href="/projects/">Projects</a><span aria-hidden="true">/</span><span>Professional work</span></nav>
       <p class="eyebrow">Data extraction · Quality · CRM workflows</p>
       <h1>University Course and Intake Data Collection</h1>
-      <p class="lead">University information lived across sites with different layouts and behaviors. I built and maintained scripts to collect it, then prepared files for quality checks before CRM import.</p>
+      <p class="lead">University information lived across sites with different layouts and behaviors. I built and maintained source-specific scripts, then prepared their output for quality checks before CRM import.</p>
       <div class="meta-strip"><span class="meta-chip"><strong>My role</strong> Script development and updates</span><span class="meta-chip"><strong>Created</strong> 37 university scripts</span><span class="meta-chip"><strong>Contributed to</strong> 72 universities</span></div>
     </div></section>
     <section class="section section--compact"><div class="container">
-      <div class="section-heading"><p class="eyebrow">The data path</p><h2 class="section-title">Collect first. Check before import.</h2><p class="lead">Each university had its own page structure, so the extraction logic had to account for site-specific navigation and content.</p></div>
-      <div class="process">
-        <article class="process-step"><span class="step-index">01 · SOURCE</span><h3>University sites</h3><p>Course and intake information is spread across pages.</p></article>
-        <article class="process-step process-step--highlight"><span class="step-index">02 · EXTRACT</span><h3>Site-specific scripts</h3><p>TypeScript and Playwright handle each site’s structure.</p></article>
-        <article class="process-step"><span class="step-index">03 · PREPARE</span><h3>Generated files</h3><p>Extracted information is structured for review.</p></article>
-        <article class="process-step"><span class="step-index">04 · QC + IMPORT</span><h3>CRM update</h3><p>Files are quality-checked, then imported to the CRM.</p></article>
+      <div class="udata-flow" data-pipeline="university">
+        <div class="udata-flow-heading"><div><p class="eyebrow">UNIVERSITY DATA · EXTRACTION PIPELINE</p><h2 class="section-title">From university pages to CRM-ready files.</h2><p class="lead">Follow a representative course record through extraction, normalization, review, and import.</p></div><div class="udata-impact"><span>EXTRACT <strong>TypeScript · Playwright</strong></span><span>QUALITY GATE <strong>QC before CRM import</strong></span></div></div>
+        <div class="udata-controls" role="group" aria-label="Pipeline stages">
+          <button class="udata-stage udata-stage--active" type="button" data-pipeline-step="0" data-note="University course and intake details live across pages with different structures." aria-pressed="true"><span>01</span>SOURCE</button>
+          <button class="udata-stage" type="button" data-pipeline-step="1" data-note="TypeScript and Playwright scripts follow each university site's own page patterns." aria-pressed="false"><span>02</span>EXTRACT</button>
+          <button class="udata-stage" type="button" data-pipeline-step="2" data-note="Shared field rules organize intake dates, course level, campus, duration, and attendance type." aria-pressed="false"><span>03</span>NORMALIZE</button>
+          <button class="udata-stage" type="button" data-pipeline-step="3" data-note="Generated files are reviewed before any records reach the CRM." aria-pressed="false"><span>04</span>QUALITY CHECK</button>
+          <button class="udata-stage" type="button" data-pipeline-step="4" data-note="The checked data is ready to support the internal CRM update." aria-pressed="false"><span>05</span>CRM IMPORT</button>
+          <button class="udata-play" type="button" data-pipeline-play>Pause flow</button>
+        </div>
+        <div class="udata-track"><span data-pipeline-progress></span><i data-pipeline-dot></i></div>
+        <div class="udata-workbench" data-pipeline-stage="0">
+          <article class="udata-source-card is-active" data-pipeline-source><div class="udata-card-top"><span class="udata-card-icon">↗</span><span class="mono-label">SOURCE PAGE</span></div><div class="udata-browser-dots"><i></i><i></i><i></i><span>university course page</span></div><div class="udata-source-content"><span class="udata-page-label">COURSE INFORMATION</span><div class="udata-source-row"><span>Program title</span><i></i></div><div class="udata-source-row"><span>Intake schedule</span><i></i></div><div class="udata-source-row"><span>Attendance</span><i></i></div><div class="udata-source-row"><span>Course length</span><i></i></div><div class="udata-source-row"><span>Campus details</span><i></i></div></div><p class="udata-source-caption">Different layouts, one structured collection goal</p></article>
+          <div class="udata-transfer"><span class="udata-transfer-label">extract · shape · review</span><div class="udata-transfer-line"><i class="udata-data-packet"></i></div><span class="udata-transfer-arrow">→</span></div>
+          <article class="udata-record-card"><div class="udata-card-top"><span class="mono-label">STRUCTURED REVIEW FILE</span><span class="udata-file-status udata-file-status--working" data-pipeline-file-status>PROCESSING</span></div><div class="udata-record-head"><span>FIELD</span><span>COLLECTED VALUE</span><span>CHECK</span></div>
+            <div class="udata-record-row" data-pipeline-row data-ready-at="2"><code>course_name</code><span>Course title extracted</span><b>—</b></div><div class="udata-record-row" data-pipeline-row data-ready-at="2"><code>intake_dates</code><span>Date range normalized</span><b>—</b></div><div class="udata-record-row" data-pipeline-row data-ready-at="3"><code>attendance_type</code><span>Study mode mapped</span><b>—</b></div><div class="udata-record-row" data-pipeline-row data-ready-at="3"><code>duration</code><span>Duration standardized</span><b>—</b></div><div class="udata-record-row" data-pipeline-row data-ready-at="4"><code>campus</code><span>Campus name prepared</span><b>—</b></div>
+            <div class="udata-qc-banner"><span data-pipeline-qc-icon>○</span><div><strong data-pipeline-qc-title>Quality review checkpoint</strong><small>Generated file reviewed before import</small></div></div>
+          </article>
+        </div>
+        <div class="udata-flow-footer"><p><span class="udata-live-dot"></span><span data-pipeline-label>STEP 01 · SOURCE</span><span class="udata-stage-note" data-pipeline-note>University course and intake details live across pages with different structures.</span></p><span>Illustrative pipeline · no live CRM records</span></div>
       </div>
     </div></section>
     <section class="section"><div class="container story-grid">
-      <aside class="story-aside"><span class="mono-label">What changed from site to site</span><p>Pagination, dropdowns, clicks, content formats, and bot defenses made a single generic extraction path unreliable.</p></aside>
+      <aside class="story-aside"><span class="mono-label">Source-specific collection</span><p>I matched each script to its university’s page structure, navigation, and content formats, then organized the collected records for review.</p></aside>
       <div class="prose">
         <h2>One script per university</h2>
-        <p>Each university could expose the needed course information differently. I created 37 university scripts and contributed edits or updates across 72 universities.</p>
+        <p>University pages presented course and intake information in different structures, so the scripts followed each source’s own layout and navigation.</p>
         <p>The scripts gathered course names, intakes, attendance details, duration, and other information used to keep the internal CRM current. The output went through a quality-control step before import.</p>
-        <h2>Handle the page that exists</h2>
+        <h2>Match each source page</h2>
         <p>The work involved browser navigation, page-specific selectors, pagination, dropdowns, dynamic pages, and data normalization. Different site behavior meant each script needed to match its own source.</p>
-        <div class="note note--sand"><strong>A real limitation:</strong> Cloudflare protection was difficult and was not solved in this project. The case study should not imply that it was bypassed.</div>
+
       </div>
     </div></section>
     <section class="section section--compact"><div class="container">
       <div class="split-cards">
-        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Script creation and maintenance</h3><p>I created 37 university scripts and updated or edited scripts across 72 universities. I also integrated the scripts with shared normalization functions for fields such as intake dates, course level, campus, duration, and attendance type.</p></article>
-        <article class="detail-card"><p class="eyebrow">Technical context</p><h3>TypeScript + Playwright</h3><p>The scripts used TypeScript and Playwright. The wider project included shared processing and storage components; integrating shared functions does not mean I authored those components.</p></article>
+        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Script creation and maintenance</h3><p>I created and maintained source-specific extraction scripts, then integrated them with shared normalization functions for intake dates, course level, campus, duration, and attendance type.</p></article>
+        <article class="detail-card"><p class="eyebrow">Technical context</p><h3>TypeScript + Playwright</h3><p>The scripts used TypeScript and Playwright with shared processing and storage components from the wider project.</p></article>
       </div>
     </div></section>
     <section class="section section--compact"><div class="container callout"><p class="eyebrow">Why the process mattered</p><h2 class="section-title">Useful data needed a quality gate.</h2><p>Preparing generated files for QC kept extraction separate from the final CRM update, so data could be checked before it reached operational records.</p><div class="button-row"><a class="button button--sand" data-route="/projects/partner-priority-dashboard/" href="/projects/partner-priority-dashboard/">Next: Partner dashboard →</a><a class="button button--secondary" data-route="/projects/" href="/projects/">All projects</a></div></div></section>

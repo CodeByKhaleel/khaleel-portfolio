@@ -1,4 +1,5 @@
 import LegacyPage from "../../components/LegacyPage";
+import EntryMonitoringFlow from "../../components/EntryMonitoringFlow";
 
 export const metadata = {
   title: "University Entry Requirement Monitoring",
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function EntryRequirementMonitoringPage() {
-  return <LegacyPage pageKey="entryRequirementMonitoring" />;
+  return <LegacyPage pageKey="entryRequirementMonitoring" entryMonitoringFlow={<EntryMonitoringFlow />} />;
 }

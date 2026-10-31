@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import SiteFooter from "./components/SiteFooter";
+import CountUpMetrics from "./components/CountUpMetrics";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
         />
         <a className="skip-link" href="#main">Skip to content</a>
         <Navigation />
+        <CountUpMetrics />
         {children}
         <SiteFooter />
       </body>

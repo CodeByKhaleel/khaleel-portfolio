@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" role="img" aria-labelledby="title">
+  <title>IBM</title>
+  <defs>
+    <clipPath id="ibm-letters">
+      <text x="80" y="58" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="57" font-weight="900" letter-spacing="-3">IBM</text>
+    </clipPath>
+  </defs>
+  <text x="80" y="58" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="57" font-weight="900" letter-spacing="-3" fill="#0f62fe">IBM</text>
+  <g clip-path="url(#ibm-letters)" stroke="#ffffff" stroke-width="5">
+    <path d="M0 12h160M0 22h160M0 32h160M0 42h160M0 52h160M0 62h160M0 72h160" />
+  </g>
+</svg>

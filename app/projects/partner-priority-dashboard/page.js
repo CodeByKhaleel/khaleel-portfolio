@@ -2,7 +2,7 @@ import LegacyPage from "../../components/LegacyPage";
 
 export const metadata = {
   title: "Education Partner Priority Dashboard",
-  description: "A solo, AI-assisted hackathon dashboard prototype for exploring education partner records with clearly labeled mock data.",
+  description: "A solo, AI-assisted hackathon dashboard prototype, with a related live Retail Operations dashboard demo.",
 };
 
 export default function PartnerPriorityDashboardPage() {

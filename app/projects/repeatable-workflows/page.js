@@ -1,4 +1,6 @@
 import LegacyPage from "../../components/LegacyPage";
+import WorkflowBoard from "../../components/WorkflowBoard";
+import WorkflowHero from "../../components/WorkflowHero";
 
 export const metadata = {
   title: "Turning Repetitive Submissions into Repeatable Workflows",
@@ -6,5 +8,5 @@ export const metadata = {
 };
 
 export default function RepeatableWorkflowsPage() {
-  return <LegacyPage pageKey="repeatableWorkflows" />;
+  return <LegacyPage pageKey="repeatableWorkflows" interactiveHero={<WorkflowHero />} interactiveSlot={<WorkflowBoard />} />;
 }

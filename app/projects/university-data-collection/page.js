@@ -1,4 +1,5 @@
 import LegacyPage from "../../components/LegacyPage";
+import UniversityDataFlow from "../../components/UniversityDataFlow";
 
 export const metadata = {
   title: "University Course and Intake Data Collection",
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function UniversityDataCollectionPage() {
-  return <LegacyPage pageKey="universityDataCollection" />;
+  return <LegacyPage pageKey="universityDataCollection" dataCollectionFlow={<UniversityDataFlow />} />;
 }

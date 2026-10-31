@@ -6,8 +6,6 @@ import Link from "next/link";
 
 const items = [
   ["Home", "/"],
-  ["About", "/about/"],
-  ["Experience", "/experience/"],
   ["Projects", "/projects/"],
   ["Contact", "/contact/"],
 ];
@@ -20,8 +18,7 @@ export default function Navigation() {
     <header className="site-header">
       <div className="nav-wrap">
         <Link className="brand" href="/" aria-label="Khaleel home" onClick={() => setOpen(false)}>
-          <span className="brand-mark" aria-hidden="true">KH</span>
-          <span>Khaleel</span>
+          <span className="brand-mark" aria-hidden="true">K<span className="brand-dot">.</span></span>
         </Link>
         <button
           className="menu-toggle"

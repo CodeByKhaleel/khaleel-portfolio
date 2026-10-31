@@ -7,7 +7,6 @@ export default function SiteFooter() {
         <span>© {new Date().getFullYear()} Khaleelullah</span>
         <nav className="footer-links" aria-label="Footer navigation">
           <Link href="/projects/">Projects</Link>
-          <Link href="/experience/">Experience</Link>
           <Link href="/contact/">Contact</Link>
           <a href="https://www.linkedin.com/in/mohammedkhaleelulah/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </nav>

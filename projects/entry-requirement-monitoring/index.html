@@ -17,28 +17,38 @@
       <div class="meta-strip"><span class="meta-chip"><strong>My role</strong> Maintenance and workflow support</span><span class="meta-chip"><strong>Primary implementation</strong> Colleague-led</span><span class="meta-chip"><strong>AI use</strong> Ticket interpretation</span></div>
     </div></section>
     <section class="section section--compact"><div class="container">
-      <div class="section-heading"><p class="eyebrow">The checkpoint flow</p><h2 class="section-title">Use AI where wording varies. Keep workflow rules explicit.</h2></div>
-      <div class="process">
-        <article class="process-step"><span class="step-index">01 · SCHEDULE</span><h3>Check on a cadence</h3><p>Dates and intervals can be configured.</p></article>
-        <article class="process-step process-step--highlight"><span class="step-index">02 · INTERPRET</span><h3>Read the ticket</h3><p>AI helps interpret varying Jira ticket patterns.</p></article>
-        <article class="process-step"><span class="step-index">03 · COMPARE</span><h3>Check email against records</h3><p>Rule-based steps compare email content with the database/cloud record.</p></article>
-        <article class="process-step"><span class="step-index">04 · ROUTE</span><h3>Update or close</h3><p>Generate an update file if needed; otherwise close the ticket and continue.</p></article>
+      <div class="entry-flow" data-pipeline="entry">
+        <div class="entry-flow-heading"><div><p class="eyebrow">ENTRY REQUIREMENTS · MONITORING WORKFLOW</p><h2 class="section-title">A scheduled check, routed to the right next step.</h2><p class="lead">See how ticket interpretation, record comparison, and clear workflow rules work together.</p></div><div class="entry-flow-badges"><span>JIRA TICKET</span><span>AI INTERPRETATION</span><span>RULE-BASED CHECK</span></div></div>
+        <div class="entry-flow-controls" role="group" aria-label="Monitoring workflow stages">
+          <button class="entry-stage entry-stage--active" data-pipeline-step="0" data-note="A configurable schedule starts the next requirement checkpoint." aria-pressed="true" type="button"><span>01</span>SCHEDULE</button>
+          <button class="entry-stage" data-pipeline-step="1" data-note="AI reads the Jira ticket pattern and identifies the linked university update." aria-pressed="false" type="button"><span>02</span>INTERPRET</button>
+          <button class="entry-stage" data-pipeline-step="2" data-note="Workflow rules compare the university email with the existing requirement record." aria-pressed="false" type="button"><span>03</span>COMPARE</button>
+          <button class="entry-stage" data-pipeline-step="3" data-note="The result determines whether an update file is prepared or the ticket is completed." aria-pressed="false" type="button"><span>04</span>ROUTE</button>
+          <button class="entry-play" data-pipeline-play type="button">Pause flow</button>
+        </div>
+        <div class="entry-flow-track"><span data-pipeline-progress></span><i data-pipeline-dot></i></div>
+        <div class="entry-workbench">
+          <article class="entry-ticket is-active" data-entry-ticket><div class="entry-card-kicker"><span class="entry-icon">J</span><span>JIRA · REQUIREMENT UPDATE</span></div><strong>University entry requirement</strong><p>Ticket details guide the workflow to the relevant university update.</p><div class="entry-ticket-meta"><span>CHECKPOINT</span><b data-entry-checkpoint>SCHEDULED</b></div><div class="entry-ai-row"><span class="entry-ai-icon">AI</span><span><b>Ticket interpreted</b><small>Update context identified</small></span><i data-entry-interpreted>…</i></div></article>
+          <div class="entry-connector"><span class="entry-connector-caption">follow ticket<br>compare record</span><div><i></i></div><b>→</b></div>
+          <article class="entry-compare"><div class="entry-compare-head"><span class="mono-label">REQUIREMENT CHECK</span><span class="entry-compare-pulse" data-entry-compare-status>READY</span></div><div class="entry-record" data-entry-record><span class="entry-record-icon">✉</span><span><small>UNIVERSITY EMAIL</small><b>Requirement details received</b></span><i data-entry-email-check>·</i></div><div class="entry-compare-symbol">↕</div><div class="entry-record" data-entry-record><span class="entry-record-icon">▤</span><span><small>EXISTING RECORD</small><b>Current requirement on file</b></span><i data-entry-record-check>·</i></div><div class="entry-branch-result"><span data-entry-result-icon>○</span><b data-entry-result>Comparison routes the next step</b></div></article>
+        </div>
+        <div class="entry-outcome-control"><div><span class="mono-label">EXPLORE THE ROUTING</span><p>Choose the comparison result to see its next step.</p></div><div class="entry-outcome-buttons" role="group" aria-label="Choose comparison result"><button class="entry-outcome-button is-selected" data-entry-outcome="update" aria-pressed="true" type="button"><span>01</span>Update detected</button><button class="entry-outcome-button" data-entry-outcome="matches" aria-pressed="false" type="button"><span>02</span>Record matches</button></div></div>
+        <div class="entry-flow-footer"><p><span class="entry-live-dot"></span><span data-pipeline-label>STEP 01 · SCHEDULE</span><span data-pipeline-note>A configurable schedule starts the next requirement checkpoint.</span></p><span>Illustrative workflow · no real ticket or email content</span></div>
       </div>
-      <p class="note">AI interprets Jira tickets; it does not extract email contents. The comparison and ticket progression are handled by workflow rules.</p>
     </div></section>
     <section class="section"><div class="container story-grid">
-      <aside class="story-aside"><span class="mono-label">Why it needs a workflow</span><p>Requirements do not live at one consistent level, and updates arrive in different forms.</p></aside>
+      <aside class="story-aside"><span class="mono-label">Monitoring across levels</span><p>Requirements span university, nationality, and course levels, with updates gathered from related university emails.</p></aside>
       <div class="prose">
         <p>Some entry requirements apply across a university. Others vary by nationality or by course. A monitoring workflow needs to find the relevant update and compare it with the current database record before an update is prepared.</p>
-        <p>Jira tickets are the checkpoint for updates. A scheduled bot checks tickets, follows the ticket to the related university email, and compares the email content with existing data. If an update is needed, the process creates an import file; if not, it marks the ticket done and moves on.</p>
+        <p>Jira tickets are the checkpoint for updates. A scheduled bot checks tickets, follows the ticket to the related university email, and compares the email content with existing data. When requirements change, the workflow prepares an import file; matching records let the ticket close and the scheduled process continue.</p>
         <h2>My contribution was keeping the workflow dependable</h2>
-        <p>A colleague led the primary implementation. I maintained the codebase and scripts, checked quality, worked to reduce unnecessary storage, improved README documentation, updated data from generated files, and created the Hermes-based checkpoint bots and schedules.</p>
+        <p>A colleague led the primary implementation. I supported the system through codebase and script maintenance, quality checks, storage improvements, README documentation, updates from generated files, and Hermes-based checkpoint bots and schedules.</p>
       </div>
     </div></section>
     <section class="section section--compact"><div class="container">
       <div class="split-cards">
         <article class="detail-card"><p class="eyebrow">My work</p><h3>Maintenance and quality</h3><ul><li>Maintained scripts and codebase quality.</li><li>Improved project READMEs and documentation.</li><li>Built configurable scheduled checkpoint bots in Hermes.</li><li>Updated records from generated files.</li></ul></article>
-        <article class="detail-card"><p class="eyebrow">Team boundary</p><h3>Colleague-led implementation</h3><p>My colleague was the main implementation owner. This page describes my supporting engineering and workflow contribution, not project leadership.</p></article>
+        <article class="detail-card"><p class="eyebrow">Team boundary</p><h3>Colleague-led implementation</h3><p>My colleague led the implementation; my contribution focused on dependable maintenance, scheduled checkpoints, documentation, and data updates.</p></article>
       </div>
     </div></section>
     <section class="section section--compact"><div class="container callout"><p class="eyebrow">A practical use of AI</p><h2 class="section-title">Adapt the tool to the messy part of the process.</h2><p>Ticket wording varies. AI helps interpret that checkpoint; explicit workflow rules handle schedules, comparisons, and ticket movement.</p><div class="button-row"><a class="button button--sand" data-route="/projects/" href="/projects/">Back to all projects</a><a class="button button--secondary" data-route="/contact/" href="/contact/">Contact</a></div></div></section>

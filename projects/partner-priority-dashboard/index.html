@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An AI-assisted solo hackathon prototype for exploring education partner priorities with clearly labeled mock data.">
+  <meta name="description" content="An AI-assisted education partner priority prototype, with a related live Retail Operations dashboard demonstration.">
   <meta name="theme-color" content="#fafaf7"><title>Partner Priority Dashboard — Khaleel</title>
   <link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script>
 </head>
@@ -11,19 +11,14 @@
   <main id="main">
     <section class="page-hero"><div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a data-route="/projects/" href="/projects/">Projects</a><span aria-hidden="true">/</span><span>Hackathon prototype</span></nav>
-      <p class="eyebrow">Solo hackathon · AI-assisted prototype · Not deployed</p>
+      <p class="eyebrow">Solo hackathon · AI-assisted prototype · live demo linked below</p>
       <h1>Education Partner Priority Dashboard</h1>
       <p class="lead">A prototype for helping staff find education partners that need attention, using filters, charts, and a searchable table instead of raw database records.</p>
-      <div class="meta-strip"><span class="meta-chip"><strong>Role</strong> Solo project</span><span class="meta-chip"><strong>Implementation</strong> AI-generated, reviewed, and refined</span><span class="meta-chip"><strong>Status</strong> Prototype</span></div>
+      <div class="meta-strip"><span class="meta-chip"><strong>Role</strong> Solo project</span><span class="meta-chip"><strong>Implementation</strong> AI-generated, reviewed, and refined</span><span class="meta-chip"><strong>Status</strong> Hackathon prototype</span><span class="meta-chip"><strong>Recognition</strong> Internal challenge winner</span></div>
     </div></section>
-    <section class="section section--compact"><div class="container">
-      <div class="surface-card" style="padding:clamp(18px,4vw,34px)">
-        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center"><div><p class="eyebrow">Interface concept</p><h2 class="section-title" style="font-size:1.5rem">Partner overview</h2></div><span class="tag tag--sand">Sample data · illustrative only</span></div>
-        <div class="split-cards" style="margin-top:24px">
-          <div class="detail-card"><div class="mono-label">Filters</div><div class="tag-row" style="padding-top:14px"><span class="tag">Country</span><span class="tag">Status</span><span class="tag">Publish status</span><span class="tag">Data source</span><span class="tag">Recruitment type</span></div><p>Selections narrow the records and the charts together.</p></div>
-          <div class="detail-card"><div class="mono-label">Priority signals · sample visualization</div><div aria-hidden="true" style="display:grid;gap:12px;margin-top:20px"><div style="height:13px;width:82%;border-radius:99px;background:#0f4d3f"></div><div style="height:13px;width:63%;border-radius:99px;background:#10a37f"></div><div style="height:13px;width:46%;border-radius:99px;background:#bad6c9"></div><div style="height:13px;width:32%;border-radius:99px;background:#dfe9e3"></div></div><p>Charts aggregate the full filtered set, not only the visible table page.</p></div>
-        </div>
-      </div>
+    <section class="section section--compact"><div class="container dashboard-live-preview">
+      <a class="dashboard-preview-image" href="https://retail-ops-dashboard-9faf.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open the live Retail Operations Dashboard in a new tab"><img src="../../assets/images/partner-priority-dashboard-preview.png" alt="Screenshot preview of the live Retail Operations Dashboard" loading="lazy"><span>Open live dashboard ↗</span></a>
+      <div class="dashboard-preview-copy"><p class="eyebrow">Live interactive demo</p><h2 class="section-title">Explore the Retail Operations Dashboard</h2><p>The link opens a separate live dashboard with sample retail operations data. The education partner project remains an independently built hackathon prototype.</p><a class="button" href="https://retail-ops-dashboard-9faf.vercel.app/" target="_blank" rel="noreferrer">View the live dashboard ↗</a></div>
     </div></section>
     <section class="section"><div class="container story-grid">
       <aside class="story-aside"><span class="mono-label">The challenge</span><p>People needed to identify which partners deserved attention without inspecting raw MongoDB records one by one.</p></aside>
@@ -31,24 +26,24 @@
         <p>The hackathon was an individual challenge: three people each built their own dashboard. I created mine independently, and it stood out to the CTO, who praised the design and shared it with other teams.</p>
         <h2>Make the record set easier to explore</h2>
         <p>The dashboard let staff search and filter partners by country, status, publish status, data source, recruitment type, and related attributes. Charts summarized the matching records, while a paginated table supported review of individual partners.</p>
-        <p>Deployment was discussed, but the CTO later chose to have the CRM team implement similar filtering and dashboard capabilities directly in the CRM. My prototype helped inspire that direction; it was not deployed as the production tool.</p>
-        <div class="note note--sand"><strong>Public-data boundary:</strong> the portfolio version uses mock data and a similar interface. The dashboard sample above is illustrative, not a display of real partner records or business results.</div>
+        <p>The prototype gave the CRM team a concrete reference for filtering and dashboard capabilities they later implemented directly in the CRM.</p>
+        <div class="note note--sand"><strong>Public-data boundary:</strong> Portfolio illustrations use mock data; no live partner records or business results are shown.</div>
       </div>
     </div></section>
     <section class="section section--compact"><div class="container">
       <div class="section-heading"><p class="eyebrow">How I approached it</p><h2 class="section-title">Define the rules before the interface.</h2><p class="lead">I specified the architecture and the business calculations, then used AI to generate much of the code and reviewed and refined the result.</p></div>
       <div class="split-cards">
-        <article class="detail-card"><h3>Filter the same set everywhere</h3><p>Charts summarize every partner that matches the current filters. Pagination only changes which records appear in the table; it does not change chart totals.</p></article>
-        <article class="detail-card"><h3>Use a weighted priority signal</h3><p>A base score plus tag weights creates a consistent comparison. The score is a decision aid, not a claim that a partner is objectively better.</p></article>
+        <article class="detail-card"><h3>Filter the same set everywhere</h3><p>Charts always summarize the complete filtered set, independently of the current table page.</p></article>
+        <article class="detail-card"><h3>Use a weighted priority signal</h3><p>A base score plus tag weights creates a consistent relative signal to support partner review.</p></article>
         <article class="detail-card"><h3>Show several dimensions</h3><p>Country, status, publish status, and recruitment types each add a different view. A partner with multiple recruitment types can contribute to more than one chart category.</p></article>
-        <article class="detail-card"><h3>Keep the build transparent</h3><p>I designed the architecture and business rules. AI generated much of the frontend and backend implementation, which I reviewed and refined. The project remains a prototype.</p></article>
+        <article class="detail-card"><h3>Keep the build transparent</h3><p>I designed the architecture and business rules, then reviewed and refined the AI-generated frontend and backend implementation. The page labels the work as a hackathon prototype.</p></article>
       </div>
       <details class="technical"><summary>Optional technical detail: score and filter behavior</summary><div class="technical-body">
         <p><strong>Priority score:</strong> start at 1.0 and add matching tag weights: Express +0.5; Exclusivity +0.3; MarketingBudget +0.3; Priority +0.2; RussellGroup +0.2; AtRisk +0.1. The result is rounded to two decimal places. Tag matching ignores case; repeated tags count repeatedly. AtRisk increases this score in the current implementation.</p>
-        <p><strong>Filtering:</strong> different filter fields combine with AND. Multiple data sources, recruitment types, or recruitment partners combine with OR within their field. Selected tags combine with AND. Charts use the whole filtered set, not just the current page.</p>
+        <p><strong>Filtering:</strong> different filter fields combine with AND. Multiple data sources, recruitment types, or recruitment partners combine with OR within their field. Selected tags combine with AND, while charts summarize all matching records across table pages.</p>
         <p><strong>Architecture:</strong> HTML and vanilla JavaScript with Chart.js and Tailwind styling; Node.js, Express, and TypeScript APIs; MongoDB data normalized into an indexed in-memory store; Firebase sign-in and token verification; Jest and Supertest coverage configured.</p>
       </div></details>
     </div></section>
-    <section class="section section--compact"><div class="container callout"><p class="eyebrow">Recognition and next step</p><h2 class="section-title">A prototype that gave the team something concrete to build on.</h2><p>The CTO's response and the later CRM direction showed the value of making the idea tangible. This was a hackathon prototype, not a deployed product.</p><div class="button-row"><a class="button button--sand" data-route="/projects/entry-requirement-monitoring/" href="/projects/entry-requirement-monitoring/">Next: Requirement monitoring →</a><a class="button button--secondary" data-route="/projects/" href="/projects/">All projects</a></div></div></section>
+    <section class="section section--compact"><div class="container callout"><p class="eyebrow">Recognition and next step</p><h2 class="section-title">A prototype that gave the team something concrete to build on.</h2><p>The CTO’s response and the later CRM direction showed the value of making the idea tangible. The prototype gave the CRM team a clear reference for capabilities they later implemented in the CRM.</p><div class="button-row"><a class="button button--sand" data-route="/projects/entry-requirement-monitoring/" href="/projects/entry-requirement-monitoring/">Next: Requirement monitoring →</a><a class="button button--secondary" data-route="/projects/" href="/projects/">All projects</a></div></div></section>
   </main><footer class="site-footer" data-site-footer></footer>
 </body></html>

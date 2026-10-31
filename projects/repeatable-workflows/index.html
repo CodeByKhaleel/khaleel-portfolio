@@ -23,7 +23,7 @@
         <div class="metric-card"><strong>94%</strong><span>success rate</span></div>
         <div class="metric-card"><strong>1,200+</strong><span>hours saved</span></div>
       </div>
-      <p class="metric-caption">Latest project snapshot; figures change as the platform is used. A manual submission could take about 30 minutes. Success rate is successful jobs divided by successful plus failed jobs; intentional user cancellations are excluded.</p>
+      <p class="metric-caption">Latest project snapshot; figures change as the platform is used. A manual submission could take about 30 minutes. Success rate is successful jobs as a share of completed jobs.</p>
     </div></section>
     <section class="section"><div class="container story-grid">
       <aside class="story-aside"><span class="mono-label">The problem</span><h2 class="section-title" style="font-size:1.65rem">Every portal had its own rules.</h2><p>Fields, page flows, uploads, verification, and conditional questions changed from one site to another. A separate bot for every portal would multiply maintenance.</p></aside>
@@ -49,12 +49,12 @@
         <article class="detail-card"><h3>Prepare data before the run</h3><p>A Python preparation step reshapes CRM names, dates, country codes, phone numbers, and yes/no values into portal-ready values. Missing fields are surfaced before the browser starts.</p></article>
         <article class="detail-card"><h3>Let the page determine the branch</h3><p>Configuration rules check what is actually present on the page, follow relevant answers, and skip questions that do not apply. This lets one workflow cover multiple form paths.</p></article>
         <article class="detail-card"><h3>Design for human checkpoints</h3><p>My manager proposed human involvement for verification steps. I implemented the handoff so a person can complete an OTP or CAPTCHA and the workflow can continue afterward.</p></article>
-        <article class="detail-card"><h3>Make failures actionable</h3><p>Retries handle small transient failures such as slow pages. Failure labels distinguish configuration, portal changes, connection issues, and runs needing a person.</p></article>
+        <article class="detail-card"><h3>Make run status clear</h3><p>Retries handle temporary slow-page conditions, while clear run-status categories guide the next step for configuration, portal, connection, and human-checkpoint events.</p></article>
       </div>
     </div></section>
     <section class="section section--compact"><div class="container">
       <div class="split-cards">
-        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Configuration and decision layer</h3><ul><li>Designed the JSON configuration model and workflow editor.</li><li>Built data preparation and conditional form logic.</li><li>Implemented human handoffs, retries, and failure classification.</li><li>Contributed updates to browser automation after its initial implementation.</li></ul></article>
+        <article class="detail-card"><p class="eyebrow">My contribution</p><h3>Configuration and decision layer</h3><ul><li>Designed the JSON configuration model and workflow editor.</li><li>Built data preparation and conditional form logic.</li><li>Implemented human handoffs, retries, and clear run-status routing.</li><li>Contributed updates to browser automation after its initial implementation.</li></ul></article>
         <article class="detail-card"><p class="eyebrow">Team contribution</p><h3>Clear ownership boundaries</h3><p>A teammate built the Chrome extension and RabbitMQ component and initially implemented browser automation. My manager proposed the human-checkpoint approach and managed the work.</p></article>
       </div>
     </div></section>
