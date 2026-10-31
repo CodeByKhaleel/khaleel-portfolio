@@ -1,72 +1,105 @@
-# Mohammed Khaleelullah
+# Mohammed Khaleelullah Portfolio
 
-### Data Engineer · Data workflows · ETL · Automation
+Source for [mohammed-khaleelullah.in](https://www.mohammed-khaleelullah.in), a personal portfolio focused on data engineering, Python, web scraping, ETL workflows, automation, and backend development.
 
-I work across data extraction, transformation, quality, and automation. I enjoy understanding a problem deeply before choosing an approach, then shaping workflows that are easier to reuse and maintain.
+The site presents the portfolio owner’s background, experience, education, certifications, and project case studies. The project content describes individual contributions and team ownership where relevant.
 
-<img src="public/images/khaleel-portrait-cutout.png" width="220" align="right" alt="Portrait of Mohammed Khaleelullah">
+## Public routes
 
-**Portfolio repository:** [CodeByKhaleel/khaleel-portfolio](https://github.com/CodeByKhaleel/khaleel-portfolio) · [LinkedIn](https://www.linkedin.com/in/mohammedkhaleelulah/) · [GitHub](https://github.com/CodeByKhaleel)
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/about/` | About and education |
+| `/experience/` | Experience |
+| `/projects/` | Project index |
+| `/contact/` | Contact |
+| `/projects/repeatable-workflows/` | Turning Repetitive Submissions into Repeatable Workflows |
+| `/projects/university-data-collection/` | University Course and Intake Data Collection |
+| `/projects/entry-requirement-monitoring/` | University Entry Requirement Monitoring |
+| `/projects/partner-priority-dashboard/` | Education Partner Priority Dashboard |
 
-## Selected work
+The site also exports technical endpoints for `robots.txt`, `sitemap.xml`, and the site icon.
 
-### Turning Repetitive Submissions into Repeatable Workflows
+## Project case studies
 
-A configurable workflow for handling differences across external portals. I designed the JSON configuration model and workflow editor, and built the data preparation, conditional form logic, human handoffs, retries, and failure classification. A teammate owned the Chrome extension and RabbitMQ components, and initially built the browser automation; I contributed later updates to that automation.
+- **Repeatable workflows:** A configurable portal-submission workflow with Python data preparation, form logic, human checkpoints, retries, and workflow status handling.
+- **University data collection:** TypeScript and Playwright scrapers gather course and intake data for quality checks before CRM import.
+- **Entry requirement monitoring:** A ticket-driven workflow checks university entry requirement updates against existing records, with AI-assisted ticket interpretation.
+- **Partner priority dashboard:** A solo, AI-assisted hackathon prototype for exploring education partner records with filters and charts using mock data. Its linked Retail Operations Dashboard is a separate live demo.
 
-**3,000+ submissions · 70+ portals · 94% success rate · 1,200+ hours saved**
+## Technology
 
-### University Course and Intake Data Collection
+- Next.js 16 App Router and React 19
+- Static export, with each public page prerendered to HTML
+- Responsive CSS in `app/globals.css`; the static-site assets are in `assets/`
+- Interactive workflow and data-flow components in `app/components/`
+- Vercel Web Analytics through `@vercel/analytics`
 
-TypeScript and Playwright scrapers collect course and intake information from university websites. I created 37 university scripts and contributed updates across 72; generated files go through quality checks before they are imported into the CRM.
+## Repository layout
 
-### Education Partner Priority Dashboard
-
-A solo, AI-assisted hackathon prototype built with mock data to help staff search partner records and explore business patterns. I defined the architecture and business logic, used AI to generate much of the application code, and reviewed and refined the result. The project won the internal challenge and was recognized by the CTO; the prototype later informed dashboard work in the CRM.
-
-### University Entry Requirement Monitoring
-
-Contributions include maintaining code quality and documentation, creating scheduled bots, and updating data from generated files. The workflow checks ticket-related updates against existing records, with AI used to interpret ticket content.
-
-## About this portfolio
-
-The site presents my professional story, experience, education, certifications, and project case studies in a responsive, accessible layout. It also includes a small selection of personal experiments.
-
-Explore the site source: [About](app/about/page.js) · [Experience](app/experience/page.js) · [Projects](app/projects/page.js) · [Contact](app/contact/page.js)
-
-## Built with
-
-- React 19 and Next.js 16 App Router
-- Static export: each route is pre-rendered to HTML, with page-specific metadata
-- Semantic HTML and responsive CSS
-- Small client-side React component for accessible mobile navigation
-- Google Fonts: Manrope, Inter, and IBM Plex Mono
+```text
+app/                    Next.js routes, metadata, shared components, and styles
+app/content.json        Portfolio content rendered by the shared page component
+public/images/          Portrait, logos, project preview, and social preview assets
+assets/                 Static-site CSS, JavaScript, and supporting images
+scripts/build-pages.mjs Optional GitHub Pages build wrapper
+.github/workflows/ci.yml GitHub Actions build check
+```
 
 ## Run locally
 
-Install the locked dependencies and start the development server:
+Requirements: Node.js 20.9 or newer and npm. The CI workflow uses Node.js 22.
 
-```powershell
+```bash
 npm ci
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Create a static export for a root-domain host:
+## Build
 
-```powershell
+Create the production static export:
+
+```bash
 npm run build
 ```
 
-For the GitHub Pages project path, build with the repository prefix:
+Next.js writes the exported site to `out/`. The export includes the HTML routes, assets, `robots.txt`, and `sitemap.xml`.
 
-```powershell
+An optional GitHub Pages build adds the repository subpath `/khaleel-portfolio`:
+
+```bash
 npm run build:pages
 ```
 
-Both builds export the site to `out/`. The Pages build uses `/khaleel-portfolio` as its base path. A custom domain build uses the root path. The custom domain and canonical URLs can be added once the domain is confirmed.
+Use the normal `npm run build` for Vercel and the custom domain. Do not set `GITHUB_PAGES=true` in the Vercel production environment; that setting is only for the GitHub Pages subpath build.
+
+## GitHub Actions and Vercel deployment
+
+The workflow in `.github/workflows/ci.yml` runs `npm ci` and `npm run build` for pushes and pull requests targeting `main`. It checks that the static site builds; it does not run a separate test suite.
+
+Production deployment is handled by Vercel’s Git integration. The Vercel project should be connected to `CodeByKhaleel/khaleel-portfolio` with `main` as its production branch. Pushes to `main` deploy to production; other branches and pull requests receive Vercel preview deployments.
+
+Recommended Vercel project settings:
+
+- Framework preset: Next.js
+- Root directory: repository root (`.`)
+- Build command: `npm run build`
+- Install command: `npm ci`
+- Output directory: leave at the Next.js default
+- Node.js: 22.x
+
+The production domain is [https://www.mohammed-khaleelullah.in](https://www.mohammed-khaleelullah.in). The apex domain redirects to `www`.
+
+## SEO and analytics
+
+- Route metadata is centralized in `app/seo.js`; the home page metadata is in `app/layout.js`.
+- Canonical URLs use `https://www.mohammed-khaleelullah.in`.
+- Open Graph and Twitter metadata use `public/images/portfolio-social-preview.png`.
+- `app/sitemap.js` lists the public content routes; `app/robots.js` references the sitemap.
+- Vercel Web Analytics is rendered by the root layout. Enable Web Analytics in the Vercel project dashboard to collect page views and view them under the project’s Analytics section.
 
 ## Privacy
 
-This repository contains the website and approved public-facing portfolio content. Private source documents, certificates, résumé files, and profile notes stay outside the repository.
+This repository contains the website and approved public-facing portfolio content. Private source material, certificates, résumé files, and profile notes are excluded from the repository.
