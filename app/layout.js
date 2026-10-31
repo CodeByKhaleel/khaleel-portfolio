@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Navigation from "./components/Navigation";
 import SiteFooter from "./components/SiteFooter";
 import CountUpMetrics from "./components/CountUpMetrics";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
         <CountUpMetrics />
         {children}
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
