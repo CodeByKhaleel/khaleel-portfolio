@@ -40,17 +40,19 @@ export const metadata = {
       "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
     images: [
       {
-        url: "/images/khaleel-portrait-cutout.png",
-        alt: "Portrait of Mohammed Khaleelullah, Data Engineer",
+        url: "/images/portfolio-social-preview.png",
+        alt: "Mohammed Khaleelullah, Data Engineer, with Python, web scraping, ETL, automation, and backend development.",
+        width: 1734,
+        height: 907,
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Mohammed Khaleelullah — Data Engineer",
     description:
       "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
-    images: ["/images/khaleel-portrait-cutout.png"],
+    images: ["/images/portfolio-social-preview.png"],
   },
 };
 

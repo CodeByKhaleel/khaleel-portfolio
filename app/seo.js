@@ -1,11 +1,10 @@
 const personName = "Mohammed Khaleelullah";
 const siteName = `${personName} — Data Engineer`;
-const socialImage = "/images/khaleel-portrait-cutout.png";
+const socialImage = "/images/portfolio-social-preview.png";
+const socialImageAlt = "Mohammed Khaleelullah, Data Engineer, with Python, web scraping, ETL, automation, and backend development.";
 
 export function createRouteMetadata({ title, description, path }) {
   const shareTitle = `${title} | ${personName}`;
-  const imageAlt = `Portrait of ${personName}, Data Engineer`;
-
   return {
     title,
     description,
@@ -19,10 +18,10 @@ export function createRouteMetadata({ title, description, path }) {
       siteName,
       title: shareTitle,
       description,
-      images: [{ url: socialImage, alt: imageAlt }],
+      images: [{ url: socialImage, alt: socialImageAlt, width: 1734, height: 907 }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: shareTitle,
       description,
       images: [socialImage],
