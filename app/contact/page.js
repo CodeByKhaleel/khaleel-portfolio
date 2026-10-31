@@ -2,7 +2,8 @@ import CopyEmail from "../components/CopyEmail";
 
 export const metadata = {
   title: "Contact",
-  description: "Connect with Khaleel about data engineering, projects, and workflow design.",
+  description: "Contact Mohammed Khaleelullah about data engineering, ETL, automation, and project opportunities.",
+  alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {

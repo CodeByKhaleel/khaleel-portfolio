@@ -9,6 +9,7 @@ const personSchema = {
   "@type": "Person",
   name: "Mohammed Khaleelullah",
   jobTitle: "Data Engineer",
+  url: "https://www.mohammed-khaleelullah.in/",
   sameAs: [
     "https://www.linkedin.com/in/mohammedkhaleelulah/",
     "https://github.com/CodeByKhaleel",
@@ -16,6 +17,10 @@ const personSchema = {
 };
 
 export const metadata = {
+  metadataBase: new URL("https://www.mohammed-khaleelullah.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Mohammed Khaleelullah — Data Engineer",
     template: "%s | Mohammed Khaleelullah",
@@ -25,18 +30,9 @@ export const metadata = {
   applicationName: "Mohammed Khaleelullah Portfolio",
   authors: [{ name: "Mohammed Khaleelullah" }],
   creator: "Mohammed Khaleelullah",
-  keywords: [
-    "Data Engineer",
-    "Data Engineering",
-    "ETL",
-    "Data Quality",
-    "Data Extraction",
-    "Workflow Automation",
-    "Python",
-    "SQL",
-  ],
   openGraph: {
     type: "website",
+    url: "/",
     locale: "en_IN",
     siteName: "Mohammed Khaleelullah — Data Engineer",
     title: "Mohammed Khaleelullah — Data Engineer",
