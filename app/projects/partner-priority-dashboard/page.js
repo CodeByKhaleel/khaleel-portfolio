@@ -1,10 +1,11 @@
 import LegacyPage from "../../components/LegacyPage";
+import { createRouteMetadata } from "../../seo";
 
-export const metadata = {
+export const metadata = createRouteMetadata({
   title: "Education Partner Priority Dashboard",
-  description: "A solo, AI-assisted hackathon dashboard prototype, with a related live Retail Operations dashboard demo.",
-  alternates: { canonical: "/projects/partner-priority-dashboard/" },
-};
+  description: "An AI-assisted hackathon prototype for searching and exploring education partner records with filters, charts, and mock data.",
+  path: "/projects/partner-priority-dashboard/",
+});
 
 export default function PartnerPriorityDashboardPage() {
   return <LegacyPage pageKey="partnerPriorityDashboard" />;

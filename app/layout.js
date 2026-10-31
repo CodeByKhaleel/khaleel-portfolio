@@ -26,7 +26,7 @@ export const metadata = {
     template: "%s | Mohammed Khaleelullah",
   },
   description:
-    "Mohammed Khaleelullah is a Data Engineer working across data extraction, ETL, quality, and automation, with a growing focus on larger-scale data engineering.",
+    "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
   applicationName: "Mohammed Khaleelullah Portfolio",
   authors: [{ name: "Mohammed Khaleelullah" }],
   creator: "Mohammed Khaleelullah",
@@ -37,13 +37,20 @@ export const metadata = {
     siteName: "Mohammed Khaleelullah — Data Engineer",
     title: "Mohammed Khaleelullah — Data Engineer",
     description:
-      "Data engineering, ETL, data quality, and automation work by Mohammed Khaleelullah.",
+      "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
+    images: [
+      {
+        url: "/images/khaleel-portrait-cutout.png",
+        alt: "Portrait of Mohammed Khaleelullah, Data Engineer",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Mohammed Khaleelullah — Data Engineer",
     description:
-      "Data engineering, ETL, data quality, and automation work by Mohammed Khaleelullah.",
+      "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
+    images: ["/images/khaleel-portrait-cutout.png"],
   },
 };
 

@@ -1,10 +1,11 @@
 import CopyEmail from "../components/CopyEmail";
+import { createRouteMetadata } from "../seo";
 
-export const metadata = {
+export const metadata = createRouteMetadata({
   title: "Contact",
-  description: "Contact Mohammed Khaleelullah about data engineering, ETL, automation, and project opportunities.",
-  alternates: { canonical: "/contact/" },
-};
+  description: "Contact Mohammed Khaleelullah to discuss Data Engineer opportunities and work involving Python, web scraping, ETL workflows, automation, and backend development.",
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (

@@ -1,10 +1,11 @@
 import LegacyPage from "../components/LegacyPage";
+import { createRouteMetadata } from "../seo";
 
-export const metadata = {
-  title: "Projects",
-  description: "Selected data engineering and automation projects, including configuration-driven workflows, university data collection, and AI-assisted prototypes.",
-  alternates: { canonical: "/projects/" },
-};
+export const metadata = createRouteMetadata({
+  title: "Data Engineering Projects",
+  description: "Explore Mohammed Khaleelullah's projects in Python, web scraping, ETL workflows, automation, and backend development.",
+  path: "/projects/",
+});
 
 export default function ProjectsPage() {
   return <LegacyPage pageKey="projects" />;

@@ -1,10 +1,11 @@
 import LegacyPage from "../components/LegacyPage";
+import { createRouteMetadata } from "../seo";
 
-export const metadata = {
-  title: "About",
-  description: "Learn about Mohammed Khaleelullah's path from university data collection to data engineering, ETL, data quality, and workflow automation.",
-  alternates: { canonical: "/about/" },
-};
+export const metadata = createRouteMetadata({
+  title: "Data Engineering Background",
+  description: "Meet Mohammed Khaleelullah, a Data Engineer whose background spans university data collection, Python, web scraping, ETL, automation, and backend development.",
+  path: "/about/",
+});
 
 export default function AboutPage() {
   return <LegacyPage pageKey="about" />;
