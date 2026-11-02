@@ -8,9 +8,18 @@ function withBasePath(markup) {
   return cleanMarkup.replace(/(href|src)="\/(?!\/)/g, `$1="${basePath}/`);
 }
 
-export default function LegacyPage({ pageKey, interactiveSlot, interactiveHero, dataCollectionFlow, entryMonitoringFlow }) {
-  const markup = pageContent[pageKey];
+export default function LegacyPage({ pageKey, interactiveSlot, interactiveHero, dataCollectionFlow, entryMonitoringFlow, homeDemo, homeApproach, homeProjects, homeRecommendations, partnerDemo }) {
+  let markup = pageContent[pageKey];
   if (!markup) return null;
+
+  if (pageKey === "partnerPriorityDashboard") markup = markup.replace('</div></section>', '</div></section><!--PARTNER_DEMO-->');
+
+  if (pageKey === "home") {
+    markup = markup.replace('<section class="section section--compact section-anchor"', '<!--HOME_DEMO--><section class="section section--compact section-anchor"');
+    markup = markup.replace(/<section class="section section--compact">\s*<div class="container">\s*<div class="section-title-row section-heading">[\s\S]*?<\/section>/, '<!--HOME_PROJECTS-->');
+    markup = markup.replace(/<section class="section section--compact" id="approach">[\s\S]*?<\/section>/, '<!--HOME_APPROACH-->');
+    markup = markup.replace(/<section class="section section--compact" id="recommendations">[\s\S]*?<\/section>/, '<!--HOME_RECOMMENDATIONS-->');
+  }
 
   const updatedMarkup = markup.replace(
     "My work spans data extraction, ETL, quality, and automation. I’m now building toward larger-scale data engineering.",
@@ -22,8 +31,13 @@ export default function LegacyPage({ pageKey, interactiveSlot, interactiveHero, 
     WORKFLOW_HERO: interactiveHero,
     DATA_COLLECTION_FLOW: dataCollectionFlow,
     ENTRY_MONITORING_FLOW: entryMonitoringFlow,
+    HOME_DEMO: homeDemo,
+    HOME_APPROACH: homeApproach,
+    HOME_PROJECTS: homeProjects,
+    HOME_RECOMMENDATIONS: homeRecommendations,
+    PARTNER_DEMO: partnerDemo,
   };
-  const parts = updatedMarkup.split(/<!--(WORKFLOW_BOARD|WORKFLOW_HERO|DATA_COLLECTION_FLOW|ENTRY_MONITORING_FLOW)-->/);
+  const parts = updatedMarkup.split(/<!--(WORKFLOW_BOARD|WORKFLOW_HERO|DATA_COLLECTION_FLOW|ENTRY_MONITORING_FLOW|HOME_DEMO|HOME_APPROACH|HOME_PROJECTS|HOME_RECOMMENDATIONS|PARTNER_DEMO)-->/);
   if (parts.length > 1) {
     return (
       <main id="main">

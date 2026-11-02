@@ -3,13 +3,14 @@ import { Analytics } from "@vercel/analytics/next";
 import Navigation from "./components/Navigation";
 import SiteFooter from "./components/SiteFooter";
 import CountUpMetrics from "./components/CountUpMetrics";
+import { siteUrl } from "./seo";
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Mohammed Khaleelullah",
   jobTitle: "Data Engineer",
-  url: "https://www.mohammed-khaleelullah.in/",
+  url: `${siteUrl}/`,
   sameAs: [
     "https://www.linkedin.com/in/mohammedkhaleelulah/",
     "https://github.com/CodeByKhaleel",
@@ -17,7 +18,7 @@ const personSchema = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://www.mohammed-khaleelullah.in"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },

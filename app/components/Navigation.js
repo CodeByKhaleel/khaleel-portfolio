@@ -7,7 +7,7 @@ import Link from "next/link";
 const items = [
   ["Home", "/"],
   ["Projects", "/projects/"],
-  ["Contact", "/contact/"],
+  ["Contact", "/#contact"],
 ];
 
 export default function Navigation() {
@@ -121,7 +121,7 @@ export default function Navigation() {
               ? pathname === "/"
               : href === "/projects/"
                 ? pathname.startsWith("/projects/")
-                : pathname === href;
+              : pathname === href;
             return (
               <Link
                 key={href}

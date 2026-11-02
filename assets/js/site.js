@@ -8,7 +8,7 @@
   const navItems = [
     ['Home', '/'],
     ['Projects', '/projects/'],
-    ['Contact', '/contact/']
+    ['Contact', '/#contact']
   ];
 
   document.querySelectorAll('[data-route]').forEach(function (link) {
@@ -67,7 +67,7 @@
 
   const footer = document.querySelector('[data-site-footer]');
   if (footer) {
-    footer.innerHTML = '<div class="footer-inner"><span>© <span data-year></span> Khaleelullah</span><nav class="footer-links" aria-label="Footer navigation"><a data-route="/projects/" href="' + githubPagesBase + '/projects/">Projects</a><a data-route="/contact/" href="' + githubPagesBase + '/contact/">Contact</a><a href="https://www.linkedin.com/in/mohammedkhaleelulah/" target="_blank" rel="noreferrer">LinkedIn ↗</a></nav></div>';
+    footer.innerHTML = '<div class="footer-inner"><span>© <span data-year></span> Khaleelullah</span><nav class="footer-links" aria-label="Footer navigation"><a data-route="/projects/" href="' + githubPagesBase + '/projects/">Projects</a><a data-route="/#contact" href="' + githubPagesBase + '/#contact">Contact</a><a href="https://www.linkedin.com/in/mohammedkhaleelulah/" target="_blank" rel="noreferrer">LinkedIn ↗</a></nav></div>';
     footer.querySelectorAll('[data-route]').forEach(function (link) {
       link.setAttribute('href', githubPagesBase + link.dataset.route);
     });

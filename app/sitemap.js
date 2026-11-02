@@ -1,15 +1,13 @@
-const siteUrl = "https://www.mohammed-khaleelullah.in";
+import { siteUrl } from "./seo";
 
 const publicPaths = [
   "/",
-  "/about/",
-  "/experience/",
   "/projects/",
-  "/contact/",
   "/projects/repeatable-workflows/",
   "/projects/university-data-collection/",
   "/projects/entry-requirement-monitoring/",
   "/projects/partner-priority-dashboard/",
+  "/projects/retail-operations-dashboard/",
 ];
 
 export const dynamic = "force-static";

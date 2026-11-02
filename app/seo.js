@@ -1,3 +1,4 @@
+export const siteUrl = "https://www.mohammed-khaleelullah.in";
 const personName = "Mohammed Khaleelullah";
 const siteName = `${personName} — Data Engineer`;
 const socialImage = "/images/portfolio-social-preview.png";
