@@ -15,5 +15,8 @@ export const dynamic = "force-static";
 export default function sitemap() {
   return publicPaths.map((path) => ({
     url: new URL(path, `${siteUrl}/`).toString(),
+    ...(path === "/"
+      ? { images: [`${siteUrl}/images/khaleel-portrait-cutout.png`] }
+      : {}),
   }));
 }

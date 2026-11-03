@@ -11,6 +11,12 @@ const personSchema = {
   name: "Mohammed Khaleelullah",
   jobTitle: "Data Engineer",
   url: `${siteUrl}/`,
+  image: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/images/khaleel-portrait-cutout.png`,
+    contentUrl: `${siteUrl}/images/khaleel-portrait-cutout.png`,
+    caption: "Mohammed Khaleelullah, Data Engineer",
+  },
   sameAs: [
     "https://www.linkedin.com/in/mohammedkhaleelulah/",
     "https://github.com/CodeByKhaleel",
