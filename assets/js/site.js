@@ -40,7 +40,7 @@
     }).join('');
 
     header.innerHTML = '<div class="nav-wrap">' +
-      '<a class="brand" data-route="/" href="' + githubPagesBase + '/" aria-label="Khaleel home"><span class="brand-mark" aria-hidden="true">K<span class="brand-dot">.</span></span><span>Khaleel</span></a>' +
+      '<a class="brand" data-route="/" href="' + githubPagesBase + '/" aria-label="Khaleel home"><span class="brand-mark">Khaleel</span></a>' +
       '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>' +
       '<nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">' + navMarkup + '</nav>' +
       '</div>';

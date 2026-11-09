@@ -10,6 +10,15 @@ const personSchema = {
   "@type": "Person",
   name: "Mohammed Khaleelullah",
   jobTitle: "Data Engineer",
+  knowsAbout: [
+    "Data engineering",
+    "Python data pipelines",
+    "ETL and data transformation",
+    "Web scraping and data extraction",
+    "Workflow automation",
+    "Data quality and validation",
+    "Backend development",
+  ],
   url: `${siteUrl}/`,
   image: {
     "@type": "ImageObject",
@@ -33,7 +42,27 @@ export const metadata = {
     template: "%s | Mohammed Khaleelullah",
   },
   description:
-    "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
+    "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
+  keywords: [
+    "Mohammed Khaleelullah",
+    "Data Engineer",
+    "Data Engineer Chennai",
+    "Data Engineer India",
+    "Python Data Engineer",
+    "Data Engineering Portfolio",
+    "ETL Developer",
+    "Data Pipeline Engineer",
+    "Web Scraping Engineer",
+    "Data Extraction Engineer",
+    "Data Automation Engineer",
+    "Workflow Automation Engineer",
+    "Data Quality Engineer",
+    "Python ETL",
+    "Scrapy",
+    "Playwright",
+    "TypeScript",
+    "Backend Developer",
+  ],
   applicationName: "Mohammed Khaleelullah Portfolio",
   authors: [{ name: "Mohammed Khaleelullah" }],
   creator: "Mohammed Khaleelullah",
@@ -44,7 +73,7 @@ export const metadata = {
     siteName: "Mohammed Khaleelullah — Data Engineer",
     title: "Mohammed Khaleelullah — Data Engineer",
     description:
-      "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
+      "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
     images: [
       {
         url: "/images/portfolio-social-preview.png",
@@ -58,7 +87,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mohammed Khaleelullah — Data Engineer",
     description:
-      "Mohammed Khaleelullah is a Data Engineer in Chennai with experience in Python, web scraping, ETL workflows, automation, and backend development.",
+      "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
     images: ["/images/portfolio-social-preview.png"],
   },
 };

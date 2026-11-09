@@ -9,6 +9,18 @@ export function createRouteMetadata({ title, description, path }) {
   return {
     title,
     description,
+    keywords: [
+      "Mohammed Khaleelullah",
+      "Data Engineer",
+      "Data Engineering",
+      "Python",
+      "ETL",
+      "Data Pipelines",
+      "Web Scraping",
+      "Data Extraction",
+      "Workflow Automation",
+      "Backend Development",
+    ],
     alternates: {
       canonical: path,
     },

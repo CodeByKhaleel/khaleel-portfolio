@@ -80,7 +80,7 @@ export default function Navigation() {
     <header className="site-header">
       <div className="nav-wrap">
         <Link className="brand" href="/" aria-label="Khaleel home" onClick={() => setOpen(false)}>
-          <span className="brand-mark" aria-hidden="true">K<span className="brand-dot">.</span></span>
+          <span className="brand-mark">Khaleel</span>
         </Link>
         <div className="nav-actions">
           <button className={`lantern-pull${dark ? " is-dark" : ""}`} type="button"
