@@ -5,31 +5,37 @@ import SiteFooter from "./components/SiteFooter";
 import CountUpMetrics from "./components/CountUpMetrics";
 import { siteUrl } from "./seo";
 
-const personSchema = {
+const profilePageSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Mohammed Khaleelullah",
-  jobTitle: "Data Engineer",
-  knowsAbout: [
-    "Data engineering",
-    "Python data pipelines",
-    "ETL and data transformation",
-    "Web scraping and data extraction",
-    "Workflow automation",
-    "Data quality and validation",
-    "Backend development",
-  ],
-  url: `${siteUrl}/`,
-  image: {
-    "@type": "ImageObject",
-    url: `${siteUrl}/images/khaleel-portrait-cutout.png`,
-    contentUrl: `${siteUrl}/images/khaleel-portrait-cutout.png`,
-    caption: "Mohammed Khaleelullah, Data Engineer",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Mohammed Khaleelullah",
+    jobTitle: "Data Engineer",
+    description:
+      "Data Engineer in Chennai focused on Python ETL, data extraction, workflow automation, and dependable data systems.",
+    knowsAbout: [
+      "Data engineering",
+      "Automation engineering",
+      "Python data pipelines",
+      "ETL and data transformation",
+      "Web scraping and data extraction",
+      "Workflow automation",
+      "Data quality and validation",
+      "Backend development",
+    ],
+    url: `${siteUrl}/`,
+    image: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/images/khaleel-portrait-cutout.png`,
+      contentUrl: `${siteUrl}/images/khaleel-portrait-cutout.png`,
+      caption: "Mohammed Khaleelullah, Data Engineer",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/mohammedkhaleelulah/",
+      "https://github.com/CodeByKhaleel",
+    ],
   },
-  sameAs: [
-    "https://www.linkedin.com/in/mohammedkhaleelulah/",
-    "https://github.com/CodeByKhaleel",
-  ],
 };
 
 export const metadata = {
@@ -38,11 +44,11 @@ export const metadata = {
     canonical: "/",
   },
   title: {
-    default: "Mohammed Khaleelullah — Data Engineer",
+    default: "Mohammed Khaleelullah | Data Engineer & Automation Engineer",
     template: "%s | Mohammed Khaleelullah",
   },
   description:
-    "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
+    "Chennai-based Data Engineer and Automation Engineer building Python ETL, web scraping, data quality, and workflow automation systems. Explore projects or contact Mohammed Khaleelullah about an opportunity.",
   keywords: [
     "Mohammed Khaleelullah",
     "Data Engineer",
@@ -70,10 +76,10 @@ export const metadata = {
     type: "website",
     url: "/",
     locale: "en_IN",
-    siteName: "Mohammed Khaleelullah — Data Engineer",
-    title: "Mohammed Khaleelullah — Data Engineer",
+    siteName: "Mohammed Khaleelullah — Data & Automation Engineer",
+    title: "Mohammed Khaleelullah | Data Engineer & Automation Engineer",
     description:
-      "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
+      "Chennai-based Data Engineer and Automation Engineer building Python ETL, web scraping, data quality, and workflow automation systems. Explore projects or contact Mohammed Khaleelullah about an opportunity.",
     images: [
       {
         url: "/images/portfolio-social-preview.png",
@@ -85,9 +91,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammed Khaleelullah — Data Engineer",
+    title: "Mohammed Khaleelullah | Data Engineer & Automation Engineer",
     description:
-      "Mohammed Khaleelullah is a Data Engineer in Chennai, India, specializing in Python data pipelines, ETL, web scraping, data extraction, workflow automation, and backend development.",
+      "Chennai-based Data Engineer and Automation Engineer building Python ETL, web scraping, data quality, and workflow automation systems. Explore projects or contact Mohammed Khaleelullah about an opportunity.",
     images: ["/images/portfolio-social-preview.png"],
   },
 };
@@ -101,7 +107,7 @@ export default function RootLayout({ children }) {
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
         />
         <a className="skip-link" href="#main">Skip to content</a>
         <Navigation />

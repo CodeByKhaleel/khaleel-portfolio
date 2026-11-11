@@ -1,6 +1,6 @@
 export const siteUrl = "https://www.mohammed-khaleelullah.in";
 const personName = "Mohammed Khaleelullah";
-const siteName = `${personName} — Data Engineer`;
+const siteName = `${personName} — Data & Automation Engineer`;
 const socialImage = "/images/portfolio-social-preview.png";
 const socialImageAlt = "Mohammed Khaleelullah, Data Engineer, with Python, web scraping, ETL, automation, and backend development.";
 
@@ -19,6 +19,7 @@ export function createRouteMetadata({ title, description, path }) {
       "Web Scraping",
       "Data Extraction",
       "Workflow Automation",
+      "Automation Engineer",
       "Backend Development",
     ],
     alternates: {
