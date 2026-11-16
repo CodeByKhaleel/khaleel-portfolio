@@ -597,6 +597,8 @@ details.technical .technical-body > * + * { margin-top: 12px; }
 .contact-panel h2 { color: white; }
 .contact-panel p { max-width: 590px; margin-top: 12px; color: rgba(255,255,255,.78); }
 .contact-panel .button--sand { border: 0; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.resume-actions .button { min-height: 42px; }
 .contact-eyebrow { color: #f8e0b8 !important; }
 .contact-portrait-wrap { align-self: stretch; display: flex; align-items: center; justify-content: center; min-width: 150px; }
 .contact-portrait { width: 150px; height: 190px; object-fit: cover; object-position: center 22%; border: 5px solid rgba(248,224,184,.9); border-radius: 100px 100px 18px 18px; background: var(--dark-surface, #eadfce); }
