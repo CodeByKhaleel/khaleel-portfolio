@@ -406,6 +406,11 @@ a.project-card:hover { transform: translateY(-3px); border-color: rgba(15,77,63,
 .metric-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
 .metric-card strong { display: block; color: var(--forest); font-family: Manrope, sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -.05em; }
 .metric-card span { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; }
+.metric-info { position: relative; display: inline-flex; vertical-align: middle; align-items: center; justify-content: center; width: 18px; height: 18px; margin-left: 3px; padding: 0; border: 0; border-radius: 50%; color: var(--forest); background: transparent; cursor: help; }
+.metric-info svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.metric-tooltip { position: absolute; z-index: 20; left: 50%; bottom: calc(100% + 10px); width: min(300px, calc(100vw - 40px)); padding: 11px 13px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--surface, #fff); box-shadow: 0 12px 32px rgb(20 35 28 / 18%); font-size: 12px; font-weight: 400; line-height: 1.5; text-align: left; letter-spacing: 0; white-space: normal; opacity: 0; visibility: hidden; transform: translate(-50%, 4px); transition: opacity .16s ease, transform .16s ease, visibility .16s ease; pointer-events: none; }
+.metric-info:hover .metric-tooltip, .metric-info:focus-visible .metric-tooltip { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.metric-info:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
 .metric-caption { margin-top: 13px; color: var(--muted); font-size: 11px; }
 
 .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-block: 28px; }

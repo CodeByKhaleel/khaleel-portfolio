@@ -18,19 +18,19 @@
     </div></section>
     <section class="section section--compact"><div class="container">
       <div class="metrics-grid">
-        <div class="metric-card"><strong>3,000+</strong><span>submissions processed</span></div>
+        <div class="metric-card"><strong>4,000+</strong><span>jobs run</span></div>
         <div class="metric-card"><strong>70+</strong><span>portal workflows configured</span></div>
-        <div class="metric-card"><strong>94%</strong><span>success rate</span></div>
-        <div class="metric-card"><strong>1,200+</strong><span>hours saved</span></div>
+        <div class="metric-card"><strong>94.5%</strong><span>success rate</span></div>
+        <div class="metric-card"><strong>74+</strong><span>estimated hours saved <button class="metric-info" type="button" aria-label="How estimated hours saved is calculated" aria-describedby="hours-saved-tip"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.2"></circle><path d="M10 9v4m0-6h.01"></path></svg><span class="metric-tooltip" role="tooltip" id="hours-saved-tip">Estimated net time saved = sum of (pause/manual seconds − bot seconds) for 4,001 successful runs ÷ 3,600 = 74.2 hours. Negative differences offset positive ones. These intervals cover different field groups, so this is an estimate, not a controlled human-versus-bot benchmark.</span></button></span></div>
       </div>
-      <p class="metric-caption">Latest project snapshot; figures change as the platform is used. A manual submission could take about 30 minutes. Success rate is successful jobs as a share of completed jobs.</p>
+      <p class="metric-caption">Estimated net time saved: sum of (pause/manual seconds − bot seconds) across 4,001 successful job runs ÷ 3,600 = 74.2 hours. Positive and negative run differences are netted. These intervals cover different field groups, so treat this as an estimate rather than a controlled manual-versus-bot benchmark. Success rate is successful jobs divided by completed jobs, excluding intentional cancellations.</p>
     </div></section>
     <section class="section"><div class="container story-grid">
       <aside class="story-aside"><span class="mono-label">The problem</span><h2 class="section-title" style="font-size:1.65rem">Every portal had its own rules.</h2><p>Fields, page flows, uploads, verification, and conditional questions changed from one site to another. A separate bot for every portal would multiply maintenance.</p></aside>
       <div class="prose">
         <p>Each submission meant someone re-entering CRM details into another external portal. The same information needed different formats, and the page itself could change depending on earlier answers.</p>
         <p>The core design question was how to support new portal workflows without adding another portal-specific code path every time.</p>
-        <h2>Describe the portal. Reuse the workflow.</h2>
+        <p>The platform saves student data against a student ID. When that student applies to another university, the saved details can be reused for the new application. In this dataset, 619 students had multiple applications, and 587 applied across more than one university. That represents 727 applications beyond each student’s first.</p><h2>Describe the portal. Reuse the workflow.</h2>
         <p>I designed the JSON configuration model and workflow editor so each portal’s steps and conditions could live in configuration. The shared workflow could interpret that description, while config changes could be made without redeploying the code.</p>
       </div>
     </div></section>
